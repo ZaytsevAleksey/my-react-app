@@ -10,10 +10,10 @@ import { Link } from "react-router-dom";
 
 const HomePage: React.FC = () => (
   <>
-    <HeroSection />
-    <SliderSection />
-    <QuoteSection />
-    <InfoSection />
+    <Hero/>
+    <Slider/>
+    <Quote/>
+    <InfoSection/>
 
 
     <h2>
@@ -22,8 +22,8 @@ const HomePage: React.FC = () => (
       </Link>
     </h2>
 
-    <ConnectSection />
-    <CtaSection />
+    <Connect/>
+    <CtaSection/>
   </>
 );
 

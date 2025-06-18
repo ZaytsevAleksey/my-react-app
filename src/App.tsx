@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Preloader from "./components/Preloader/Preloader";
+import Preloader from "./components/Preloader/Preloader.tsx";
 import SignupModal from "./components/Register/Register";
 import LoginModal from "./components/Login/Login";
 
