@@ -1,34 +1,27 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import styles from "../../assets/styles/Header.module.css";
 
 const Header = () => {
   const navigate = useNavigate();
 
-  const handleSignUp = () => {
-    navigate('/signup'); 
-  };
-
-  const handleLogin = () => {
-    navigate('/login');
-  };
-
   return (
-    <header>
-      <div className="container">
-        <div className="log"><p>Jobly</p></div>
-        <nav>
-          <a href="/recruiters" className="ForRecruiters">For Recruiters</a>
+    <header className={styles.header}>
+      <div className={styles.container}>
+        <div className={styles.logo} onClick={() => navigate('/')}>
+          Jobly
+        </div>
+        <nav className={styles.nav}>
+          <a href="/recruiters" className={styles.forRecruiters}>For Recruiters</a>
           <button 
-            id="SignUp" 
-            className="SignUp"
-            onClick={handleSignUp}
+            className={styles.signUp}
+            onClick={() => navigate('/signup')}
           >
             Sign Up
           </button>
           <button 
-            id="Login" 
-            className="Login"
-            onClick={handleLogin}
+            className={styles.login}
+            onClick={() => navigate('/login')}
           >
             Log in
           </button>

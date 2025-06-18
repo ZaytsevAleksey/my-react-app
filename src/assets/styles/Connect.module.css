@@ -1,0 +1,32 @@
+.content_section_text2 {
+  margin-top: 40px;
+  margin-bottom: 40px; 
+}
+
+.content_section_text2 .container {
+  display: flex; 
+  align-items: center; 
+}
+
+.image3 {
+  max-width: 100%; 
+  height: auto; 
+  margin-right: 10%; 
+}
+.connect {
+  max-width: 600px; 
+}
+.connect h1 {
+  font-size: 2.1rem; 
+  margin-bottom: 10px; 
+}
+.connect h2 {
+  font-size: 15px; 
+  color: #707070;
+  text-align: left;
+}
+.text h1{
+  display: flex; 
+  font-size: 40px; 
+  margin-bottom: 20px;
+}

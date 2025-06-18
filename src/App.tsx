@@ -1,20 +1,44 @@
-import Message from './Message'
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-function App() {
-  const messageText = "Привет, мир!";
-  const [count, setCount] = useState(0)
+import Preloader from "./components/Preloader/Preloader";
+import SignupModal from "./components/Register/Register";
+import LoginModal from "./components/Login/Login";
+
+import Layout from "./components/Layout";
+
+import HomePage from "./pages/HomePage";
+import CardsPage from "./pages/CardsPage";
+import NotFoundPage from "./pages/NotFoundPage";
+
+const App: React.FC = () => {
+  const [showRegister, setShowRegister] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
-    <>
-      <div>
-      {messageText}
-      </div>
-    </>
-  )
-}
+    <BrowserRouter>
+      {loading && <Preloader />}
+      <Register open={showSignup} onClose={() => setShowRegister(false)} />
+      <Login open={showLogin} onClose={() => setShowLogin(false)} />
 
-export default App
+      <Routes>
+        <Route
+          path="/"
+          element={<Layout onSignup={() => setShowSignup(true)} onLogin={() => setShowLogin(true)} />}
+        >
+          <Route index element={<HomePage />} />
+          <Route path="cards" element={<CardsPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+};
+
+export default App;

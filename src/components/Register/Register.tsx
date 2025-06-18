@@ -1,38 +1,52 @@
-import React from 'react';
-import './styles.css';
+import React, { useState } from 'react';
+import styles from "../../assets/styles/Register.module.css";
 
 interface RegisterModalProps {
+  isOpen: boolean;
   onClose: () => void;
+  onRegister: (name: string, email: string, password: string) => void;
 }
 
-const RegisterModal: React.FC<RegisterModalProps> = ({ onClose }) => {
+const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose, onRegister }) => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    onRegister(name, email, password);
   };
 
+  if (!isOpen) return null;
+
   return (
-    <div 
-      id="registerModal" 
-      className="modal" 
-      onClick={(e) => {
-        if (e.target === e.currentTarget) onClose();
-      }}
-    >
-      <div className="modal-content">
-        <span 
-          className="close" 
-          onClick={onClose}
-        >
-          &times;
-        </span>
+    <div className={styles.modal} onClick={(e) => e.target === e.currentTarget && onClose()}>
+      <div className={styles.modalContent}>
+        <span className={styles.close} onClick={onClose}>&times;</span>
         <h2>Sign Up</h2>
-        <form id="registerForm" onSubmit={handleSubmit}>
-          <input type="text" placeholder="Name" required />
-          <input type="email" placeholder="Email" required />
-          <input type="password" placeholder="Password" required />
-          <button type="submit" className="submit">
-            Sign Up
-          </button>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          <button type="submit">Sign Up</button>
         </form>
       </div>
     </div>

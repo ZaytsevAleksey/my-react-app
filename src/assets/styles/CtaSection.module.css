@@ -1,0 +1,52 @@
+.content_section_CTA {
+  background-color: #000; 
+  color: #fff; 
+  padding: 0px 0; 
+  margin-top: 40px; 
+}
+
+.content_section_CTA .container {
+  display: flex; 
+  align-items: center;
+  justify-content: space-between; 
+}
+
+.text {
+  max-width: 400px; 
+}
+
+.connect h1 {
+  font-size: 2.1rem; 
+  margin-bottom: 10px; 
+}
+.connect h2 {
+  font-size: 15px; 
+  color: #707070;
+  text-align: left;
+}
+.text h1{
+  display: flex; 
+  font-size: 40px; 
+  margin-bottom: 20px;
+}
+.Join_Now {
+  background-color: #3D1EDD; 
+  color: #fff;
+  padding: 14px 32px 14px 32px; 
+  border: none; 
+  cursor: pointer; 
+  margin-top: 20px; 
+  text-decoration-skip-ink: none;
+  text-decoration: none; 
+}
+
+.Join_Now:hover {
+  background-color: #fff;
+  color: #3D1EDD;
+  border: 2px solid #E5DEFD;
+}
+
+.image4 {
+  max-width: 100%; 
+  height: auto; 
+}

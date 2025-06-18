@@ -1,20 +1,19 @@
 import React from 'react';
-import './styles.css';
+import styles from "../../assets/styles/Quote.module.css";
 
-const ContentSection = () => {
+const Quote = () => {
   return (
-    <section className="content_section_text1">
-      <div className="container">
-        <div className="photo">
-          <img src="img/Ellipse 512.jpg" alt="photo_avatar" className="image2"/>
+    <section className={styles.quote}>
+      <div className={styles.container}>
+        <div className={styles.photo}>
+          <img src="/img/Ellipse 512.jpg" alt="Founder avatar" className={styles.image} />
         </div>
         <blockquote>
-          <h1> 
+          <h1 className={styles.title}>
             Creating an Online Presence is Hard.<br /> 
             Jobly Makes it Easy for Recruiters to See you
           </h1>
-          <br />
-          <div className="chel">
+          <div className={styles.author}>
             <h2>Zhao Cui</h2>
             <h3>Founder at Jobly.co</h3>
           </div>
@@ -24,4 +23,4 @@ const ContentSection = () => {
   );
 };
 
-export default ContentSection;
+export default Quote;

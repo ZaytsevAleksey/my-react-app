@@ -1,22 +1,22 @@
-import React from "react";
+import React from 'react';
+import type { CardProps } from '../../Type';
 
 interface CardProps {
-  card_name: string;
-  card_text: string;
-  image: string;
-  onCardClick: (imageUrl: string) => void;
+  title: string;
+  description: string;
+  image?: string;
+  onClick?: () => void;
 }
 
-const Card: React.FC<CardProps> = ({ card_name, card_text, image, onCardClick }) => (
+const Card: React.FC<CardProps> = ({ title, description, image, onClick }) => (
   <div 
-    className="feature" 
-    onClick={() => onCardClick(image)} 
-    style={{ cursor: onCardClick ? "pointer" : "default" }}
+    className={styles.card}
+    onClick={onClick}
+    style={{ cursor: onClick ? 'pointer' : 'default' }}
   >
-    <hr className="thick-line" />
-    <h3>{card_name}</h3>
-    <p>{card_text}</p>
-    {image && <img src={image} alt={card_name} />}
+    {image && <img src={image} alt={title} className={styles.image} />}
+    <h3 className={styles.title}>{title}</h3>
+    <p className={styles.description}>{description}</p>
   </div>
 );
 

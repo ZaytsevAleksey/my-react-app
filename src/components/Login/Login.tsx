@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styles from "../../assets/styles/Login.module.css"; 
 
 interface LoginModalProps {
   isOpen: boolean;

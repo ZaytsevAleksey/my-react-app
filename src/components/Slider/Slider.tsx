@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './styles.css'; 
+import styles from "../../assets/styles/Slider.module.css";
 
 const Slider: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
