@@ -11,16 +11,16 @@ const FormsSection: React.FC<FormsSectionProps> = ({
   children 
 }) => {
   return (
-    <section className="content_section_forms">
-      <div className="container">
+    <section className={styles.content_section_forms}>
+      <div className={styles.container}>
         <h1>Everything you want to know in one place.</h1>
         <img 
           id="infImage" 
           src={infImageSrc} 
           alt="Info Image" 
-          className="inf-image" 
+          className={styles.inf-image} 
         />
-        <div className="features" id="features-container">
+        <div className={styles.features} id="features-container">
           {children}
         </div>
       </div>

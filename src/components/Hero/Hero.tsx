@@ -12,8 +12,8 @@ const HeroSection = () => {
     navigate('/recruiters');
   };
   return (
-    <section className="content_section_hero">
-      <div className="container">
+    <section className={styles.content_section_hero}>
+      <div className={styles.container}>
         <h1>
           Candidates with Creative & <br /> 
           Engineering Backgrounds
@@ -24,7 +24,7 @@ const HeroSection = () => {
         </h2>
         <button 
           id="JoinNow" 
-          className="JoinNow"
+          className={styles.JoinNow}
           onClick={handleJoinNow}
         >
           Join Now
@@ -32,7 +32,7 @@ const HeroSection = () => {
         <p>
           Looking for candidates?{' '}
           <button 
-            className="Hirenow"
+            className={styles.Hirenow}
             onClick={handleHireNow}
           >
             Hire now

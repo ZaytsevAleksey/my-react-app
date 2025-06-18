@@ -21,13 +21,13 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose, onLogin }) => 
   return (
     <div 
       id="loginModal" 
-      className="modal" 
+      className={styles.modal} 
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
     >
-      <div className="modal-content">
-        <span className="close" onClick={onClose}>&times;</span>
+      <div className={styles.modal-content}>
+        <span className={styles.close} onClick={onClose}>&times;</span>
         <h2>Log in</h2>
         <form id="loginForm" onSubmit={handleSubmit}>
           <input
@@ -44,7 +44,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose, onLogin }) => 
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-          <button type="submit" className="submit">
+          <button type="submit" className={styles.submit}>
             Log in
           </button>
         </form>

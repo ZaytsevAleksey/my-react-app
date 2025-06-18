@@ -20,14 +20,14 @@ const Slider: React.FC = () => {
   }, [slides.length]);
 
   return (
-    <section className="slider_container">
-      <div className="slider">
+    <section className={styles.slider_container}>
+      <div className={styles.slider}>
         {slides.map((slide, index) => (
           <img
             key={index}
             src={slide.src}
             alt={slide.alt}
-            className={`hero-image ${index === currentSlide ? 'active' : ''}`}
+            className={`${styles.hero-image} ${index === currentSlide ? 'active' : ''}`}
           />
         ))}
       </div>

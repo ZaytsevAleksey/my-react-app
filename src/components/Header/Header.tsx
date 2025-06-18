@@ -2,27 +2,27 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import styles from "../../assets/styles/Header.module.css";
 
-const Header = () => {
-  const navigate = useNavigate();
+const Header: React.FC = () => {
+  const handleSignUpClick = () => {
+    console.log('Sign Up clicked');
+  };
+
+  const handleLoginClick = () => {
+    console.log('Login clicked');
+  };
 
   return (
-    <header className={styles.header}>
+    <header>
       <div className={styles.container}>
-        <div className={styles.logo} onClick={() => navigate('/')}>
-          Jobly
+        <div className={styles.log}>
+          <p>Jobly</p>
         </div>
-        <nav className={styles.nav}>
-          <a href="/recruiters" className={styles.forRecruiters}>For Recruiters</a>
-          <button 
-            className={styles.signUp}
-            onClick={() => navigate('/signup')}
-          >
+        <nav>
+          <a href=" " className={styles.ForRecruiters}>For Recruiters</a>
+          <button id="SignUp" className={styles.SignUp} onClick={handleSignUpClick}>
             Sign Up
           </button>
-          <button 
-            className={styles.login}
-            onClick={() => navigate('/login')}
-          >
+          <button id="Login" className={styles.Login} onClick={handleLoginClick}>
             Log in
           </button>
         </nav>
