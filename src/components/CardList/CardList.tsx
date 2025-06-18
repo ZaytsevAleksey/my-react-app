@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Card from './Card/Card';
+import Card from '../Card/Card';
 import type { CardData } from '../../Type';
 import defaultStyles from "../../assets/styles/InfoSection.module.css";
 

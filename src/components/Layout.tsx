@@ -1,42 +1,21 @@
-import React from 'react';
-import Header from './Header/Header';
-import Footer from './Footer/Footer';
-import Preloader from './Preloader/Preloader';
-import { useLocation } from 'react-router-dom';
+import React from "react";
+import { Outlet } from "react-router-dom";
+import Header from "./Header/Header";
+import Footer from "./Footer/Footer";
 
 interface LayoutProps {
-  children?: React.ReactNode;
-  showPreloader?: boolean;
+  onSignup: () => void;
+  onLogin: () => void;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children, showPreloader = false }) => {
-  const location = useLocation();
-  const isHomePage = location.pathname === '/';
+const Layout: React.FC<LayoutProps> = ({ onSignup, onLogin }) => (
+  <>
+    <Header onSignup={onSignup} onLogin={onLogin} />
+    <main>
+      <Outlet />
+    </main>
+    <Footer />
+  </>
+);
 
-  return (
-    <div className="layout">
-      {showPreloader && <Preloader />}
-      
-      <Header />
-      
-      <main className="main-content">
-        {isHomePage && !children ? (
-          <>
-            <HeroSection />
-            <Slider />
-            <InfoSection>
-              <CardComponent />
-            </InfoSection>
-            <ConnectSection />
-            <Quote />
-            <CtaSection />
-          </>
-        ) : (
-          children
-        )}
-      </main>
-      
-      <Footer />
-    </div>
-  );
-};
+export default Layout;

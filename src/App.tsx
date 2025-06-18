@@ -8,7 +8,7 @@ import LoginModal from "./components/Login/Login";
 import Layout from "./components/Layout";
 
 import HomePage from "./pages/HomePage";
-import CardsPage from "./pages/CardsPage";
+import CardsPage from "./pages/CardPage";
 import NotFoundPage from "./pages/NotFoundPage";
 
 const App: React.FC = () => {
@@ -24,7 +24,7 @@ const App: React.FC = () => {
   return (
     <BrowserRouter>
       {loading && <Preloader />}
-      <Register open={showSignup} onClose={() => setShowRegister(false)} />
+      <Register open={showRegister} onClose={() => setShowRegister(false)} />
       <Login open={showLogin} onClose={() => setShowLogin(false)} />
 
       <Routes>
