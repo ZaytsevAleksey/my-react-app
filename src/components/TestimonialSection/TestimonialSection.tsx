@@ -1,33 +1,26 @@
-import React from 'react';
-import styles from "../../assets/styles/Quote.module.css";
+import React from "react";
+import styles from "../../assets/styles/Testimonial.module.css";
 
-const TestimonialSection: React.FC = () => {
-  return (
-    <section className={styles.content_section_text1}>
-      <div className={styles.container}>
-        <div className={styles.photo}>
-          <img 
-            src="/img/Ellipse512.jpg" 
-            alt="Zhao Cui - Founder at Jobly.co" 
-            className={styles.image2}
-            loading="lazy" 
-          />
-        </div>
-        <blockquote>
-          <h1>
-            Creating an Online Presence is Hard.
-            <br /> 
-            Jobly Makes it Easy for Recruiters to See You
-          </h1>
-          <br />
-          <div className={styles.chel}>
-            <h2>Zhao Cui</h2>
-            <h3>Founder at Jobly.co</h3>
-          </div>
-        </blockquote>
+const QuoteSection: React.FC = () => (
+  <section className={styles.quote}>
+    <div className={styles.container}>
+      <div className={styles.images}>
+        <img src="img/kovichki.png" alt="mas" className={styles.img_dop1} />
+        <img src="img/Ellipse 512.jpg" alt="" className={styles.img_dop2} />
       </div>
-    </section>
-  );
-};
+      <blockquote>
+        <h1>
+          Creating an Online Presence is Hard.<br />
+          Jobly Makes it Easy for Recruiters to See you
+        </h1>
+        <br />
+        <div className={styles.author}>
+          <h4>Zhao Cui</h4>
+          <p>Founder at Jobly.co</p>
+        </div>
+      </blockquote>
+    </div>
+  </section>
+);
 
-export default TestimonialSection;
+export default QuoteSection;

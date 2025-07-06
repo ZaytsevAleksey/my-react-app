@@ -10,7 +10,8 @@ const CardsPage: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <h1>Страница со списком карточек</h1>
+      <h1>The page with the list of cards</h1>
+      {/* Передаем класс для сетки карточек */}
       <CardList limit={limit} containerClassName={styles.cardsGrid} />
     </div>
   );

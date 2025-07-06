@@ -1,64 +1,54 @@
-import React, { useEffect, useState } from 'react';
-import Card from '../Card/Card';
+import React, { useState, useEffect } from "react";
+import Card from "../Card/Card";
 import type { CardData } from '../../Type';
 import defaultStyles from "../../assets/styles/InfoSection.module.css";
 
-interface Card {
-  card_name: string;
-  card_text: string;
-  image: string;
+interface CardListProps {
+  limit?: number;
+  containerClassName?: string; 
 }
 
-const CardComponent: React.FC = () => {
-  const [cards, setCards] = useState<Card[]>([]);
-  const [error, setError] = useState<string | null>(null);
-  
-  const updateImage = (imageUrl: string) => {
-    console.log('Image would update to:', imageUrl);
-  };
+const CardList: React.FC<CardListProps> = ({ limit = 10, containerClassName }) => {
+  const [cards, setCards] = useState<CardData[]>([]);
+  const [loading, setLoading] = React.useState(true);
+  const [error, setError] = React.useState<string | null>(null);
 
   useEffect(() => {
-    const fetchCards = async () => {
-      try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=3');
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const posts = await response.json();
-        
-        const mappedCards: Card[] = posts.map((post: any, i: number) => ({
-          card_name: `Professional Profile ${i + 1}`,
-          card_text: post.body,
-          image: 'img/Frame 1625.jpg'
+    fetch(`https://jsonplaceholder.typicode.com/posts?_limit=3`)
+      .then(res => res.json())
+      .then(data => {
+        const cardsData: CardData[] = data.map((item: any, index: number) => ({
+          id: item.id,
+          title: `Comment ${index + 1}`,
+          text: item.body,
+          image: null,
         }));
-        
-        setCards(mappedCards);
-      } catch (err) {
-        setError(err instanceof Error ? err.message : 'An unknown error occurred');
-        console.error('Ошибка при загрузке карточек:', err);
-      }
-    };
+        setCards(cardsData);
+        setLoading(false);
+      })
+      .catch(err => {
+        setError(err.message);
+        setLoading(false);
+      });
+  }, [limit]);
 
-    fetchCards();
-  }, []);
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
 
   return (
-    <div id="features-container">
-      {cards.map((card, index) => (
-        <Card
-          key={index}
-          card_name={card.card_name}
-          card_text={card.card_text}
-          image={card.image}
-          onCardClick={updateImage}
-        />
+    <div className={containerClassName ? containerClassName : defaultStyles.features} id="features-container">
+      {cards.map(card => (
+        <div key={card.id} className={defaultStyles.feature}>
+          <Card
+            title={card.title}
+            text={card.text}
+            image={card.image}
+            onClick={() => console.log(card.image)}
+          />
+        </div>
       ))}
     </div>
   );
 };
 
-export default CardComponent;
+export default CardList;

@@ -1,52 +1,27 @@
-import React, { useState } from 'react';
+import React from "react";
 import styles from "../../assets/styles/Login.module.css"; 
 
 interface LoginModalProps {
-  isOpen: boolean;
+  open: boolean;
   onClose: () => void;
-  onLogin: (email: string, password: string) => void;
 }
 
-const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose, onLogin }) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    onLogin(email, password);
-  };
-
-  if (!isOpen) return null;
+const LoginModal: React.FC<LoginModalProps> = ({ open, onClose }) => {
+  if (!open) return null;
 
   return (
-    <div 
-      id="loginModal" 
-      className={styles.modal} 
-      onClick={(e) => {
-        if (e.target === e.currentTarget) onClose();
-      }}
-    >
-      <div className={styles.modal-content}>
+    <div className={styles.modal}>
+      <div className={styles.modalContent}>
         <span className={styles.close} onClick={onClose}>&times;</span>
-        <h2>Log in</h2>
-        <form id="loginForm" onSubmit={handleSubmit}>
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-          <button type="submit" className={styles.submit}>
-            Log in
-          </button>
+        <h2>Login</h2>
+        <form>
+          <label htmlFor="loginUsername">User name:</label>
+          <input type="text" id="loginUsername" name="loginUsername" required />
+
+          <label htmlFor="loginPassword">Password:</label>
+          <input type="password" id="loginPassword" name="loginPassword" required />
+
+          <button className={styles.buttonokno} type="submit">Login</button>
         </form>
       </div>
     </div>

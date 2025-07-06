@@ -1,31 +1,18 @@
-import React from 'react';
+import React from "react";
 import styles from "../../assets/styles/InfoSection.module.css";
 import CardList from "../CardList/CardList"; 
 
-interface FormsSectionProps {
-  infImageSrc?: string;
-  children?: React.ReactNode;
-}
-const FormsSection: React.FC<FormsSectionProps> = ({ 
-  infImageSrc = "img/Frame 1625.jpg", 
-  children 
-}) => {
+const InfoSection = () => {
   return (
-    <section className={styles.content_section_forms}>
+    <section className={styles.info}>
       <div className={styles.container}>
         <h1>Everything you want to know in one place.</h1>
-        <img 
-          id="infImage" 
-          src={infImageSrc} 
-          alt="Info Image" 
-          className={styles.inf-image} 
-        />
-        <div className={styles.features} id="features-container">
-          {children}
-        </div>
+        <img id="infoImage" src="img/Frame 1625.jpg" alt="Info" className={styles.infoImage} />
+        
+        <CardList />
       </div>
     </section>
   );
 };
 
-export default FormsSection;
+export default InfoSection;

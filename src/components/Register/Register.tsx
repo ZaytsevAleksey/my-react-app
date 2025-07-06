@@ -1,56 +1,30 @@
-import React, { useState } from 'react';
+import React from "react";
 import styles from "../../assets/styles/Register.module.css";
 
-interface RegisterModalProps {
-  isOpen: boolean;
+interface SignupModalProps {
+  open: boolean;
   onClose: () => void;
-  onRegister: (name: string, email: string, password: string) => void;
 }
 
-const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose, onRegister }) => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    onRegister(name, email, password);
-  };
-
-  if (!isOpen) return null;
-
+const SignupModal: React.FC<SignupModalProps> = ({ open, onClose }) => {
+  if (!open) return null;
   return (
-    <div className={styles.modal} onClick={(e) => e.target === e.currentTarget && onClose()}>
+    <div className={styles.modal}>
       <div className={styles.modalContent}>
         <span className={styles.close} onClick={onClose}>&times;</span>
-        <h2>Sign Up</h2>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-          <button type="submit">Sign Up</button>
+        <h2>Sign up</h2>
+        <form>
+          <label htmlFor="username">User name:</label>
+          <input type="text" id="username" name="username" required />
+          <label htmlFor="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+          <label htmlFor="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+          <button className={styles.buttonokno} type="submit">Sign up</button>
         </form>
       </div>
     </div>
   );
 };
 
-export default RegisterModal;
+export default SignupModal;

@@ -1,37 +1,38 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import styles from "../../assets/styles/Slider.module.css";
 
-const Slider: React.FC = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const slides = [
-    { src: 'img/Slide1.jpg', alt: 'Image Slide 1' },
-    { src: 'img/Slide2.jpg', alt: 'Image Slide 2' },
-    { src: 'img/Slide3.jpg', alt: 'Image Slide 3' }
-  ];
+const images = [
+  "img/Slide1.jpg",
+  "img/Slide2.jpg",
+  "img/Slide3.jpg",
+];
+
+const SliderSection: React.FC = () => {
+  const [active, setActive] = useState(0);
 
   useEffect(() => {
-    if (slides.length > 0) {
-      const interval = setInterval(() => {
-        setCurrentSlide((prev) => (prev + 1) % slides.length);
-      }, 3000);
+    const interval = setInterval(() => {
+      setActive(prev => (prev === images.length - 1 ? 0 : prev + 1));
+    }, 4000);
 
-      return () => clearInterval(interval);
-    }
-  }, [slides.length]);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <section className={styles.slider_container}>
+    <section className={styles.bloktem}>
       <div className={styles.slider}>
-        {slides.map((slide, index) => (
+        {images.map((src, idx) => (
           <img
-            key={index}
-            src={slide.src}
-            alt={slide.alt}
-            className={`${styles.hero-image} ${index === currentSlide ? 'active' : ''}`}
+            key={src}
+            src={src}
+            alt={`Image ${idx + 1}`}
+            className={`${styles.heroImage} ${active === idx ? styles.active : ""}`}
           />
         ))}
+        {/* Кнопки убраны */}
       </div>
     </section>
   );
 };
-export default Slider;
+
+export default SliderSection;

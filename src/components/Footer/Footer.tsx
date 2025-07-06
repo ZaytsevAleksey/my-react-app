@@ -1,22 +1,20 @@
-import React from 'react';
+import React from "react";
 import styles from "../../assets/styles/Footer.module.css";
 
-const Footer: React.FC = () => {
-  return (
-    <footer className={styles.page__footer}>
-      <div className={styles.footer_r}>
-        <p className={styles.footer_text1}>Jobly.co</p>
-        <br />
-        <p className={styles.footer_text2}>We support a pool of diverse young creatives and engineers.</p>
-        <br />
-        <p className={styles.footer_text3}>© {new Date().getFullYear()} Jobly.co Copyright and All rights reserved.</p>
+const Footer: React.FC = () => (
+  <footer className={styles.footer}>
+    <div className={styles.foot_all}>
+      <div className={styles.footer__right}>
+        <p className={styles.footer__text}>Jobly.co</p>
+        <p className={styles.footer__text}>We support a pool of diverse young creatives and engineers.</p>
+        <p className={styles.footer__text}>© 2023 Jobly.co Copyright and All rights reserved.</p>
       </div>
-      <div className={styles.footer_l}>
-        <a href="terms" className={styles.footer_link}>Terms and Conditions</a> · 
-        <a href="privacy" className={styles.footer_link}>Privacy Policy</a>
+      <div className={styles.foot_left}>
+        <a className={styles.footer__link} href="#terms">Terms and Conditions</a> · 
+        <a className={styles.footer__link} href="#privacy">Privacy Policy</a>
       </div>
-    </footer>
-  );
-};
+    </div>
+  </footer>
+);
 
 export default Footer;

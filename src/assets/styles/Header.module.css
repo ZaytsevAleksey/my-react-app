@@ -1,49 +1,49 @@
-header {
+.header {
   background-color: #fff;
   padding: 20px 0;
   border-bottom: 1px solid #eee;
 }
-header .container {
-  display: flex; 
-  justify-content: space-between; 
+.container {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-header .log {
+.logo {
   font-weight: bold;
   font-size: 1.5rem;
 }
-header nav {
+.nav {
   display: flex;
 }
-header nav a {
+.forRecruiters {
   margin-left: 20px;
-  color: #000000;
+  color: #333;
   text-decoration: none;
   padding: 10px 20px;
   border-radius: 5px;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
 }
-header nav a:hover {
-  color: #3D1EDD;
-}
-header nav .SignUp {
+.buttonjoin {
   background-color: #3D1EDD;
-  color: #fff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
-header nav .SignUp:hover {
-  background-color: #fff; 
-  color: #3D1EDD;
-  border: 2px solid #E5DEFD;
+.buttonjoin:hover {
+  background-color: #2b0f9e;
 }
-header nav .Login {
-  background-color: #fff; 
-  color: #3D1EDD; 
-  border: 2px solid #E5DEFD; 
-}
+.login {
+padding: 10px 20px;
+margin-top: 10px;
+margin-bottom: 10px;
+color: #3D1EDD;    
+background-color: transparent; 
+border: 2px solid #3D1EDD;   
+cursor: pointer;
 
-header nav .Login:hover {
-  background-color: #3D1EDD; 
-  color: #fff;
 }

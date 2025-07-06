@@ -5,7 +5,7 @@ export interface CardData {
   image?: string | null;
 }
 
-interface CardProps {
+export interface CardProps {
   title: string;
   description: string;
   image?: string | null;

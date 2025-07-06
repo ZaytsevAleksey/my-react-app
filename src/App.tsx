@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Preloader from "./components/Preloader/Preloader.tsx";
+import Preloader from "./components/Preloader/Preloader";
 import SignupModal from "./components/Register/Register";
 import LoginModal from "./components/Login/Login";
 
@@ -12,7 +12,7 @@ import CardsPage from "./pages/CardPage";
 import NotFoundPage from "./pages/NotFoundPage";
 
 const App: React.FC = () => {
-  const [showRegister, setShowRegister] = useState(false);
+  const [showSignup, setShowSignup] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
   const [loading, setLoading] = useState(true);
 
@@ -24,8 +24,8 @@ const App: React.FC = () => {
   return (
     <BrowserRouter>
       {loading && <Preloader />}
-      <Register open={showRegister} onClose={() => setShowRegister(false)} />
-      <Login open={showLogin} onClose={() => setShowLogin(false)} />
+      <SignupModal open={showSignup} onClose={() => setShowSignup(false)} />
+      <LoginModal open={showLogin} onClose={() => setShowLogin(false)} />
 
       <Routes>
         <Route
