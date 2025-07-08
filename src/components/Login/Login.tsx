@@ -13,7 +13,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ open, onClose }) => {
     <div className={styles.modal}>
       <div className={styles.modalContent}>
         <span className={styles.close} onClick={onClose}>&times;</span>
-        <h2>Login</h2>
+        <h2>Sign up</h2>
         <form>
           <label htmlFor="loginUsername">User name:</label>
           <input type="text" id="loginUsername" name="loginUsername" required />

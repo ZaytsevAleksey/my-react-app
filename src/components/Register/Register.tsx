@@ -12,7 +12,7 @@ const SignupModal: React.FC<SignupModalProps> = ({ open, onClose }) => {
     <div className={styles.modal}>
       <div className={styles.modalContent}>
         <span className={styles.close} onClick={onClose}>&times;</span>
-        <h2>Sign up</h2>
+        <h2>Log In</h2>
         <form>
           <label htmlFor="username">User name:</label>
           <input type="text" id="username" name="username" required />

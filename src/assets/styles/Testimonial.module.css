@@ -17,7 +17,7 @@ body {
 }
 
 .quote {
-  background-color: #f1f1f1;
+  background-color: #fff;
   padding: 40px 0;
   text-align: center;
 }
@@ -45,12 +45,36 @@ body {
   margin-left: 210px;
 }
 .author h4 {
-  margin: 0;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  line-height: 15px;
+  letter-spacing: -0.04em;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
 }
 .author p {
-  margin: 0;
-  color: #888;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  line-height: 15px;
+  letter-spacing: -0.04em;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color:#707070;
 }
 h1{
-  font-size: 1.7rem;
+  font-size: 2.7rem;
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  line-height: 50px;
+  letter-spacing: -0.04em;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
 }

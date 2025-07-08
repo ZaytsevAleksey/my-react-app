@@ -18,9 +18,12 @@
   max-width: 600px;
 }
 .connectText h1 {
-  font-size: 24px;
+  font-size: 2.1rem; 
   margin-bottom: 10px;
+  text-align: left;
 }
 .connectText p {
-  font-size: 18px;
+  font-size: 15px;
+  color: #707070;
+  text-align: left;
 }

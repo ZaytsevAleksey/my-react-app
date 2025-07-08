@@ -3,8 +3,38 @@
   margin-bottom: 10%;
 }
 .hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-size: 3.7rem;
+  margin-bottom: 70px;
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  line-height: 83.2px;
+  letter-spacing: -0.04em;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+.hero h4{
+  font-size: 2.5rem;
+  margin-bottom: 90px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: -0.04em;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #707070;
+}
+.hero p{
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  line-height: 100px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #707070;
 }
 .container {
   width: 90%;
@@ -14,12 +44,15 @@
 .buttonjoin {
   background-color: #3D1EDD;
   color: #fff;
-  padding: 10px 20px;
-  border: none;
+  width: Fixed (145px)px;
+  height: Hug (50px)px;
+  padding: 14px 32px 14px 32px;
+  gap: 10px;
+  text-decoration: none;
   cursor: pointer;
-  margin-top: 10px;
-  margin-bottom: 10px;
 }
 .buttonjoin:hover {
-  background-color: #2b0f9e;
+  background-color: #fff;
+  color: #3D1EDD;
+  border: 2px solid #E5DEFD;
 }

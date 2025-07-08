@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 import Preloader from "./components/Preloader/Preloader";
-import SignupModal from "./components/Register/Register";
-import LoginModal from "./components/Login/Login";
-
+import SignupModal from "./components/Login/Login";
+import LoginModal from "./components/Register/Register";
 import Layout from "./components/Layout";
-
 import HomePage from "./pages/HomePage";
 import CardsPage from "./pages/CardPage";
 import NotFoundPage from "./pages/NotFoundPage";
