@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "../../assets/styles/InfoSection.module.css";
 import CardList from "../CardList/CardList"; 
 
