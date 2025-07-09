@@ -3,7 +3,6 @@ import Hero from "../components/Hero/Hero";
 import Slider from "../components/Slider/Slider";
 import Testimonial from "../components/TestimonialSection/TestimonialSection";
 import InfoSection from "../components/InfoSection/InfoSection";
-import CardList from "../components/CardList/CardList";
 import ConnectSection from "../components/Connect/Connect";
 import CtaSection from "../components/CtaSection/CtaSection";
 import { Link } from "react-router-dom";
