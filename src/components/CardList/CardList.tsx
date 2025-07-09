@@ -43,8 +43,7 @@ const CardList: React.FC<CardListProps> = ({ limit = 10, containerClassName }) =
             title={card.title}
             text={card.text}
             image={card.image}
-            onClick={() => console.log(card.image)}
-          />
+            onClick={() => console.log(card.image)} description={""}          />
         </div>
       ))}
     </div>

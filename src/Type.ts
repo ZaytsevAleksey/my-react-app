@@ -7,6 +7,7 @@ export interface CardData {
 
 export interface CardProps {
   title: string;
+  text: string;
   description: string;
   image?: string | null;
   onClick?: () => void;
